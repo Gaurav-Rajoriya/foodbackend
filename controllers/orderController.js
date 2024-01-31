@@ -45,18 +45,18 @@ exports.createOrder = catchAsyncErrors(async (req, res) => {
 
     console.log(newOrder);
 
-    const user = await User.findById(userId); // Assuming you have a User model
+    // const user = await User.findById(userId); // Assuming you have a User model
 
-    const formattedOrderItems = formatOrderItems(orderItems);
+    // const formattedOrderItems = formatOrderItems(orderItems);
 
-    const payload = {
-      email: user.email, // Assuming you have an email field in your User model
-      subject: "Order Confirmation",
-      message: `Thank you for your order. Here are your ordered items:<br>${formattedOrderItems}`,
-      isHtml: true, // Specify that the email content is in HTML format
-    };
+    // const payload = {
+    //   email: user.email, // Assuming you have an email field in your User model
+    //   subject: "Order Confirmation",
+    //   message: `Thank you for your order. Here are your ordered items:<br>${formattedOrderItems}`,
+    //   isHtml: true, // Specify that the email content is in HTML format
+    // };
 
-    await sendMail(payload);
+    // await sendMail(payload);
 
     res.status(201).json({
       success: true,
